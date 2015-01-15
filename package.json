@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "Tools to aid in MOBBL development",
   "main": "index.js",
-  "bin": "bin/mobbl",
+  "bin": ["bin/mobbl","bin/mobbl-dummy","bin/mobbl-create"],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
