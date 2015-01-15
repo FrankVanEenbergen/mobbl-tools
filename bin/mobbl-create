@@ -1,0 +1,5 @@
+#!/usr/bin/env node
+
+var command = require('../commands/create.js');
+command.run(process.argv);
+

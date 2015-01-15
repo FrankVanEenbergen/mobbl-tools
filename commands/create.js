@@ -1,14 +1,21 @@
 function CreateCommand () {
 }
 
-CreateCommand.run = function(args) {
-  if (args[0] == 'project') this.generateProject();
-  else if (args[0] == 'controller' || args[0] == 'etc') console.log('Subcommand not implemented yet!');
-  else {console.log('Unknown subcommand ' + args[0] + '. Usage:'); this.help ();}
-}
+var program = require ('commander');
 
-CreateCommand.help = function() {
-  console.log(this.description + '\n\nUsage: mobbl create project|controller|etc\n\nDoes one of:\nproject - interactively create a new MOBBL-project\ncontroller - creates a new controller (not implemented!)\netc - create something else\n');
+CreateCommand.run = function(args) {
+    program.usage("[command] <args...>").description(this.description).version("0.0.1");
+    program.command('project').description('interactively create a new MOBBL-project').action(this.generateProject);
+    program.command('controller').description('creates a new MOBBL-controller (not implemented)').action(function () {console.log("Not implemented!")});
+    program.command('etc').description('creates whatever (not implemented)').action (function() {console.log("Really?")});
+    program.on('*', function () {
+      program.help ();
+    });
+
+    program.parse (args);
+
+    if (!program.args.length) program.help ();
+
 }
 
 CreateCommand.description = 'Create project, controller, etc.';

@@ -20,7 +20,7 @@
     "url": "https://github.com/ItudeMobile/mobbl-tools/issues"
   },
   "dependencies": {
-    "commander": "2.3.0",
+    "commander": "2.6.0",
     "istextorbinary": "1.0.0",
     "prompt": "0.2.13",
     "replacestream": "0.1.3"
