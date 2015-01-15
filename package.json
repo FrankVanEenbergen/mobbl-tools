@@ -1,8 +1,9 @@
 {
-  "name": "mobbl-tools",
+  "name": "mobbl",
   "version": "0.0.1",
   "description": "Tools to aid in MOBBL development",
   "main": "index.js",
+  "bin": "bin/mobbl",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
