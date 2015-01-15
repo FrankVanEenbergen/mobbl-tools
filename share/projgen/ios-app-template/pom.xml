@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation=" http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>__MVN_GROUP_IDENTIFIER__</groupId>
+  <artifactId>__MVN_ARTIFACT_ID__</artifactId>
+  <version>0.0.0.1-SNAPSHOT</version>
+  <packaging>xcode-app</packaging>
+  <name>__PROJECT_NAME__</name>
+
+  <dependencies>
+    <dependency>
+      <groupId>com.itude.mobile.ios.mobbl</groupId>
+      <artifactId>mobbl-core-framework</artifactId>
+      <version>${core.framework.version}</version>
+      <type>xcode-framework</type>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>com.sap.prd.mobile.ios.mios</groupId>
+        <artifactId>xcode-maven-plugin</artifactId>
+        <version>1.13.1-SNAPSHOT</version>
+        <extensions>true</extensions>
+        <configuration>
+          <configuration>Release</configuration>
+          <sdks>
+            <sdk>iphoneos</sdk>
+          </sdks>
+          <target>__PROJECT_NAME__</target>
+          <skipVersionUpdate>true</skipVersionUpdate>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+  <properties>
+    <core.framework.version>0.0.2.13</core.framework.version>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>  
+
+  <repositories>
+    <repository>
+      <id>itudemobile-github-repository</id>
+      <name>ItudeMobile Github repository</name>
+      <url>http://mobbl.org/maven-repository/releases</url>
+    </repository>
+  </repositories>
+  <pluginRepositories>
+    <pluginRepository>
+      <id>itudemobile-github-repository</id>
+      <name>ItudeMobile Github repository</name>
+      <url>http://mobbl.org/maven-repository/snapshots</url>
+    </pluginRepository>
+  </pluginRepositories>
+
+</project>
+
+
+

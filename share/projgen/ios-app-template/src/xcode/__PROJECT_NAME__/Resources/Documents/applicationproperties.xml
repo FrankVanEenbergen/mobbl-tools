@@ -1,0 +1,4 @@
+<Application>
+	<Property name="localeCode" value="en_US"/>
+    <Property name="language" value="en" />
+</Application>

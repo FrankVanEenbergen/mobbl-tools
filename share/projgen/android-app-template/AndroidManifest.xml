@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="0.0.1.0-SNAPSHOT" package="__BUNDLE_IDENTIFIER__">
+  <uses-sdk android:minSdkVersion="9" android:targetSdkVersion="19"/>
+
+  <application android:label="__BUNDLE_DISPLAY_NAME__" android:name="__BUNDLE_IDENTIFIER__.ApplicationController" android:theme="@style/Theme.AppCompat.Light">
+
+    <activity android:name="com.itude.mobile.mobbl.core.MBSplashScreen" android:noHistory="true" android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN"/>
+        <category android:name="android.intent.category.LAUNCHER"/>
+      </intent-filter>
+    </activity>
+    <activity android:configChanges="orientation" android:name="com.itude.mobile.mobbl.core.controller.MBViewManager"/>
+    <activity android:configChanges="orientation" android:name="com.itude.mobile.mobbl.core.controller.MBPhoneViewManager"/>
+    <activity android:configChanges="orientation" android:name="com.itude.mobile.mobbl.core.controller.MBTabletViewManager"/>
+    <activity android:configChanges="orientation" android:name="com.itude.mobile.mobbl.core.controller.MBDialogController"/>
+    <activity android:name="com.itude.mobile.mobbl.core.controller.util.MBBasicViewController"/>
+  </application>
+</manifest>

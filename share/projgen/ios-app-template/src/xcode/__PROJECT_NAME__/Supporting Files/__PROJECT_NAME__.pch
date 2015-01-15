@@ -1,0 +1,27 @@
+//
+// Prefix header for all source files of the '__PROJECT_NAME__' target in the '__PROJECT_NAME__' project
+// 
+
+#import <Availability.h>
+
+#ifndef __IPHONE_3_0
+#warning "This project uses features only available in iPhone SDK 3.0 and later."
+#endif
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+    #import <mobbl-core-framework/mobbl_core_framework.h>
+#endif
+
+#ifdef DEBUGMOBBL
+#endif
+
+#ifdef SIMULATOR
+#endif
+
+#ifdef TEST
+#endif
+
+#ifdef DEVICE
+#endif

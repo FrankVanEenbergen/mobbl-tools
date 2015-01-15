@@ -1,0 +1,5 @@
+<MBBundle>
+    <Text key="PageTitle" value="Page Title"/>
+    <Text key="SectionTitle" value="Section Title"/>
+    <Text key="FieldLabelTitle" value="Field Label Title"/>
+</MBBundle>

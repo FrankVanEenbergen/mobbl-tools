@@ -1,0 +1,127 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>__MVN_GROUP_IDENTIFIER__</groupId>
+  <artifactId>__MVN_ARTIFACT_ID__</artifactId>
+  <version>0.0.1.0-SNAPSHOT</version>
+  <packaging>apk</packaging>
+  <name>__PROJECT_NAME__</name>
+
+  <dependencies>
+    <dependency>
+      <groupId>com.google.android</groupId>
+      <artifactId>android</artifactId>
+      <version>${android.version}</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.itude.mobile.android.mobbl</groupId>
+      <artifactId>mobbl-core-lib</artifactId>
+      <version>${core.lib.version}</version>
+      <type>apklib</type>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <finalName>${project.artifactId}-${project.version}</finalName>
+    <sourceDirectory>src</sourceDirectory>
+    <pluginManagement>
+      <plugins>
+        <!--This plugin's configuration is used to store Eclipse m2e settings 
+          only. It has no influence on the Maven build itself. -->
+        <plugin>
+          <groupId>org.eclipse.m2e</groupId>
+          <artifactId>lifecycle-mapping</artifactId>
+          <version>1.0.0</version>
+          <configuration>
+            <lifecycleMappingMetadata>
+              <pluginExecutions>
+                <pluginExecution>
+                  <pluginExecutionFilter>
+                    <groupId>
+                      com.jayway.maven.plugins.android.generation2
+                    </groupId>
+                    <artifactId>
+                      android-maven-plugin
+                    </artifactId>
+                    <versionRange>
+                      [3.9.0-rc.1,)
+                    </versionRange>
+                    <goals>
+                      <goal>proguard</goal>
+                      <goal>generate-sources</goal>
+                    </goals>
+                  </pluginExecutionFilter>
+                  <action>
+                    <ignore />
+                  </action>
+                </pluginExecution>
+              </pluginExecutions>
+            </lifecycleMappingMetadata>
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+    <plugins>
+      <plugin>
+        <artifactId>maven-jarsigner-plugin</artifactId>
+        <version>1.2</version>
+      </plugin>
+      <plugin>
+        <artifactId>maven-resources-plugin</artifactId>
+        <version>2.4.3</version>
+        <configuration>
+          <encoding>UTF-8</encoding>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>com.jayway.maven.plugins.android.generation2</groupId>
+        <artifactId>android-maven-plugin</artifactId>
+        <version>3.9.0-rc.1</version>
+        <configuration>
+          <sdk>
+            <platform>19</platform>
+          </sdk>
+          <dex>
+            <jvmArguments>
+              <argument>-Xms256m</argument>
+              <argument>-Xmx512m</argument>
+            </jvmArguments>
+          </dex>
+          <run>
+            <debug>true</debug>
+          </run>
+        </configuration>
+        <extensions>true</extensions>
+      </plugin>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>1.6</source>
+          <target>1.6</target>
+          <encoding>UTF-8</encoding>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>build-helper-maven-plugin</artifactId>
+        <version>1.5</version>
+      </plugin>
+    </plugins>
+  </build>
+
+  <properties>
+    <core.lib.version>3.2.0.20</core.lib.version>
+    <android.version>4.4</android.version>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <repositories>
+    <repository>
+      <id>itudemobile-github-repository</id>
+      <name>ItudeMobile Github repository</name>
+      <url>http://mobbl.org/maven-repository/releases</url>
+    </repository>
+  </repositories>
+
+</project>   

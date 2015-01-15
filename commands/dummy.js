@@ -9,7 +9,7 @@ DummyCommand.run = function(args) {
 }
 
 DummyCommand.help = function() {
-  console.log('Dummy command!\n\nUsage: mobbl dummy [<text>]\n\nEchos <text>, or \'Dummy success!\' if no text was provided');
+  console.log(this.description + '\n\nUsage: mobbl dummy [<text>]\n\nEchos <text>, or \'Dummy success!\' if no text was provided');
 }
 
 DummyCommand.description = 'Dummy command!';
