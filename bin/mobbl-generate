@@ -1,0 +1,5 @@
+#!/usr/bin/env node
+
+var command = require('../commands/generate.js');
+command.run(process.argv);
+
