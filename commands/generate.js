@@ -14,8 +14,8 @@ GenerateCommand.run = function(args) {
   program
   .command('docdef <name>')
   .description('Generate a document definition')
-  .option('-f, --from [file]', 'Use a file to base the document on. Supported types: json')
-  .option('-d, --datahandler [name]', 'Use name as the datahandler. Default: MBMemoryDataHandler')
+  .option('-f, --from <file>', 'Use a file to base the document on. Supported types: json')
+  .option('-d, --datahandler <name>', 'Use name as the datahandler. Default: MBMemoryDataHandler')
   .option('-n, --noautocreate', 'Sets autocreate to false')
   .action(function (name, options) {
     debugger;
