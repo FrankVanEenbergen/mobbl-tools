@@ -4,6 +4,7 @@ function GenerateCommand () {
 var program = require ('commander');
 var fs = require('fs');
 var json2mobbl = require('../lib/json2mobbl/json2mobbl');
+var mobbl = require('../lib/mobbl-common.js');
 
 GenerateCommand.run = function(args) {
   var self = this;
@@ -27,9 +28,11 @@ GenerateCommand.generateDocDef = function (name, input) {
 
   fs.readFile (input, 'utf8', function (err, data) {
     if (err) return console.log("Error: " + err);
+    debugger;
 
     var object = JSON.parse(data);
-    json2mobbl (object, process.stdout);
+    var out = fs.createWriteStream (mobbl.config.documentPath + "/" + name);
+    json2mobbl (object, out);
   });
 }
 }
