@@ -56,6 +56,6 @@ GenerateCommand.generateMobblConf = function (name, options) {
 
 GenerateCommand.description = 'Generate command!';
 
-GenerateCommand.longDescription = GenerateCommand.description + ' Echoes <arguments>, or \'Generate success!\' if no text was provided';
+GenerateCommand.longDescription = GenerateCommand.description + ' Generates pieces of mobbl-configuration. See the individual commands for more details.';
 
 module.exports = GenerateCommand;
