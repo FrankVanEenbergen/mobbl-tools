@@ -18,13 +18,17 @@ GenerateCommand.run = function(args) {
   .option('-d, --datahandler <name>', 'Use name as the datahandler. Default: MBMemoryDataHandler')
   .option('-n, --noautocreate', 'Sets autocreate to false')
   .action(function (name, options) {
-    debugger;
     self.generateDocDef (name, options);
   });
 
+  program
+  .command('mobbl.conf')
+  .description('Generate a mobbl.conf file based on auto-detected directory structure')
+  .action (function (name, options) {
+    self.generateMobblConf (name, options);
+  });
+
   program.parse (args);
-
-
 }
 
 GenerateCommand.generateDocDef = function (name, options) {
@@ -43,6 +47,11 @@ GenerateCommand.generateDocDef = function (name, options) {
   }
 
   out.write (postamble);
+}
+
+GenerateCommand.generateMobblConf = function (name, options) {
+  var out = fs.createWriteStream ('./mobbl.conf');
+  out.write (JSON.stringify (mobbl.config, null, '\t'));
 }
 
 GenerateCommand.description = 'Generate command!';
