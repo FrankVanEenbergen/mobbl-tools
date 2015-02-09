@@ -1,4 +1,4 @@
-/* Test: XSLT Pipeline
+/* Test: xslt_pipeline
  *
  * (C) Copyright Itude Mobile B.V., The Netherlands
  * 

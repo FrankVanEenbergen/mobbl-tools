@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!-- 
 
-Stylesheet: java
+Stylesheet: Java IR -> Java
 
 (C) Copyright Itude Mobile B.V., The Netherlands
 

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!-- 
 
-Stylesheet: java
+Stylesheet: Swift IR -> Swift
 
 (C) Copyright Itude Mobile B.V., The Netherlands
 

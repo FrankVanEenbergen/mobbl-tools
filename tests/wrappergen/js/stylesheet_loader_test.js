@@ -1,4 +1,4 @@
-/* Test: Stylesheet loader
+/* Test: stylesheet_loader
  *
  * (C) Copyright Itude Mobile B.V., The Netherlands
  * 
