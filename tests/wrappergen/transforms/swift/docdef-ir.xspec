@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<x:description
+  xmlns:x="http://www.jenitennison.com/xslt/xspec"
+  xmlns:mb="http://itude.com/schemas/MB/2.0"
+  xmlns:mbxsl="http://itude.com/schemas/MBXSL/1.0"
+  xmlns:swift="http://itude.com/schemas/codegen/ir/swift"
+  stylesheet="../../../../share/wrappergen/xslt/swift/docdef-ir.xslt">
+
+  <x:param name="outputDirectory" select="'/output'" />
+  <x:param name="origin" select="'origin.xml'" />
+  <x:param name="devMode" select="false()" />
+
+  <x:scenario label="Capitalize name">
+    <x:call function="mbxsl:capitalize">
+      <x:param select="'test'" />
+    </x:call>
+
+    <x:expect label="Should be 'Test' with a capital 'T'." select="'Test'" />
+  </x:scenario>
+
+  <x:scenario label="Decapitalize name">
+    <x:call function="mbxsl:decapitalize">
+      <x:param select="'Test'" />
+    </x:call>
+
+    <x:expect label="Should be 'test' without a lower case 't'." select="'test'" />
+  </x:scenario>
+
+  <x:scenario label="Building prefixed-style wrapper class names with mbxsl:prefixed-class-name()">
+    <x:call function="mbxsl:prefixed-class-name" />
+
+    <x:scenario label="The name of the wrapper class for the 'level0' mb:Document element">
+      <x:call>
+        <x:param select="//mb:Document[@name='level0']" href="../resources/docdefs/docdef-prefixing.xml" />
+      </x:call>
+      <x:expect label="should be 'Level0'" select="'Level0'" />
+    </x:scenario>
+
+    <x:scenario label="The name of the wrapper class for the 'level1' mb:Element element in resources/docdefs/docdef-prefixing.xml">
+      <x:call>
+        <x:param select="//mb:Element[@name='level1']" href="../resources/docdefs/docdef-prefixing.xml" />
+      </x:call>
+      <x:expect label="should be 'Level0_Level1'" select="'Level0_Level1'" />
+    </x:scenario>
+
+    <x:scenario label="The name of the wrapper class for the 'level2' mb:Element element in resources/docdefs/docdef-prefixing.xml">
+      <x:call>
+        <x:param select="//mb:Element[@name='level2']" href="../resources/docdefs/docdef-prefixing.xml" />
+      </x:call>
+      <x:expect label="should be 'Level0_Level1_Level2'" select="'Level0_Level1_Level2'" />
+    </x:scenario>
+
+    <x:scenario label="The name of the wrapper class for the 'level3' mb:Element element in resources/docdefs/docdef-prefixing.xml">
+      <x:call>
+        <x:param select="//mb:Element[@name='level3']" href="../resources/docdefs/docdef-prefixing.xml" />
+      </x:call>
+      <x:expect label="should be 'Level0_Level1_Level2_Level3'" select="'Level0_Level1_Level2_Level3'" />
+    </x:scenario>
+
+    <x:scenario label="The name of the wrapper class for the 'level4' mb:Element element in resources/docdefs/docdef-prefixing.xml">
+      <x:call>
+        <x:param select="//mb:Element[@name='level4']" href="../resources/docdefs/docdef-prefixing.xml" />
+      </x:call>
+      <x:expect label="should be 'Level0_Level1_Level2_Level3_Level4'" select="'Level0_Level1_Level2_Level3_Level4'" />
+    </x:scenario>
+
+  </x:scenario>
+
+  <x:scenario label="Text-only element">
+    <x:context href="../resources/docdefs/docdef-text.xml" />
+    <x:expect
+      label="Must be a single wrapper with one pair of String getters"
+      href="../resources/swift-ir/ir-text.xml" select="*" />
+  </x:scenario>
+
+  <x:scenario label="Complex element with single attribute">
+    <x:context href="../resources/docdefs/docdef-complex.xml" />
+    <x:expect
+      label="Must be a Banana class with a pair of Peel getters and a Peel inner class with one pair of String getters"
+      href="../resources/swift-ir/ir-complex.xml" select="*" />
+  </x:scenario>
+
+  <x:scenario label="Nested complex elements">
+    <x:context href="../resources/docdefs/docdef-nested.xml" />
+    <x:expect
+      label="Must be a Nested document wrapper containing an 'outer' element wrapper containing an 'inner' element wrapper containing a value attribute getter"
+      href="../resources/swift-ir/ir-nested.xml" select="*" />
+  </x:scenario>
+
+  <x:scenario label="Name collisions">
+    <x:context href="../resources/docdefs/docdef-name-collisions.xml" />
+    <x:expect
+      label="Must postfix otherwise identical class names with an underscore and a number"
+      href="../resources/swift-ir/ir-name-collisions.xml" select="*" />
+  </x:scenario>
+
+</x:description>
+

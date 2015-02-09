@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java:source-dir
+  xmlns:java="http://itude.com/schemas/codegen/ir/java"
+  path="/output"
+  origin="origin.xml"
+  stream-to-stdout="false">
+  <java:source-file
+    name="CollidingName"
+    package="com.example.CodeGenerator"
+    package-path="com/example/CodeGenerator">
+    <java:wrapper
+      name="CollidingName"
+      entity-type="document"
+      entity-name="collidingName">
+
+      <java:create
+        name="createCollidingName"
+        entity-type="element"
+        entity-name="CollidingName"
+        wrapper-name="CollidingName_1" />
+      <java:create-indexed
+        name="createCollidingName"
+        entity-type="element"
+        entity-name="CollidingName"
+        wrapper-name="CollidingName_1" />
+
+      <java:read
+        name="getCollidingName"
+        entity-type="element"
+        entity-name="CollidingName"
+        wrapper-name="CollidingName_1" />
+      <java:read-indexed
+        name="getCollidingName"
+        entity-type="element"
+        entity-name="CollidingName"
+        wrapper-name="CollidingName_1" />
+      <java:read-list
+        name="getCollidingNameList"
+        entity-type="element"
+        entity-name="CollidingName"
+        wrapper-name="CollidingName_1" />
+
+      <java:count
+        name="getNumberOfCollidingNameElements"
+        entity-name="CollidingName" />
+
+      <java:delete-indexed
+        name="deleteCollidingName"
+        entity-name="CollidingName" />
+
+      <java:wrapper
+        name="CollidingName_1"
+        entity-type="element"
+        entity-name="CollidingName">
+
+        <java:create
+          name="createCollidingName"
+          entity-type="element"
+          entity-name="collidingName"
+          wrapper-name="CollidingName_2" />
+        <java:create-indexed
+          name="createCollidingName"
+          entity-type="element"
+          entity-name="collidingName"
+          wrapper-name="CollidingName_2" />
+
+        <java:read
+          name="getCollidingName"
+          entity-type="element"
+          entity-name="collidingName"
+          wrapper-name="CollidingName_2" />
+        <java:read-indexed
+          name="getCollidingName"
+          entity-type="element"
+          entity-name="collidingName"
+          wrapper-name="CollidingName_2" />
+        <java:read-list
+          name="getCollidingNameList"
+          entity-type="element"
+          entity-name="collidingName"
+          wrapper-name="CollidingName_2" />
+
+        <java:count
+          name="getNumberOfCollidingNameElements"
+          entity-name="collidingName" />
+
+        <java:delete-indexed
+          name="deleteCollidingName"
+          entity-name="collidingName" />
+
+        <java:wrapper
+          name="CollidingName_2"
+          entity-type="element"
+          entity-name="collidingName">
+
+          <java:read
+            name="getValue"
+            entity-type="attribute"
+            entity-name="value" />
+          <java:update
+            name="setValue"
+            entity-type="attribute"
+            entity-name="value" />
+
+        </java:wrapper>
+      </java:wrapper>
+    </java:wrapper>
+  </java:source-file>
+</java:source-dir>

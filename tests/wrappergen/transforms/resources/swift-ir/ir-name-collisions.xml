@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<swift:source-dir
+  xmlns:swift="http://itude.com/schemas/codegen/ir/swift"
+  path="/output"
+  origin="origin.xml"
+  stream-to-stdout="false">
+  <swift:source-file
+    name="CollidingName">
+    <swift:wrapper
+      name="CollidingName"
+      entity-type="document"
+      entity-name="collidingName">
+
+      <swift:create
+        name="createCollidingName"
+        entity-type="element"
+        entity-name="CollidingName"
+        wrapper-name="CollidingName_CollidingName" />
+      <swift:create-indexed
+        name="createCollidingName"
+        entity-type="element"
+        entity-name="CollidingName"
+        wrapper-name="CollidingName_CollidingName" />
+
+      <swift:property
+        name="collidingName"
+        entity-type="element"
+        entity-name="CollidingName"
+        wrapper-name="CollidingName_CollidingName">
+        <swift:get />
+      </swift:property>
+
+      <swift:read-indexed
+        name="collidingName"
+        entity-type="element"
+        entity-name="CollidingName"
+        wrapper-name="CollidingName_CollidingName" />
+
+      <swift:count
+        name="numberOfCollidingNameElements"
+        entity-name="CollidingName" />
+
+      <swift:array-property
+        name="collidingNameArray"
+        entity-type="element"
+        entity-name="CollidingName"
+        wrapper-name="CollidingName_CollidingName" />
+
+      <swift:delete-indexed
+        name="deleteCollidingName"
+        entity-name="CollidingName" />
+
+    </swift:wrapper>
+
+    <swift:wrapper
+      name="CollidingName_CollidingName"
+      entity-type="element"
+      entity-name="CollidingName"
+      parent-name="CollidingName">
+
+      <swift:create
+        name="createCollidingName"
+        entity-type="element"
+        entity-name="collidingName"
+        wrapper-name="CollidingName_CollidingName_CollidingName" />
+      <swift:create-indexed
+        name="createCollidingName"
+        entity-type="element"
+        entity-name="collidingName"
+        wrapper-name="CollidingName_CollidingName_CollidingName" />
+
+      <swift:property
+        name="collidingName"
+        entity-type="element"
+        entity-name="collidingName"
+        wrapper-name="CollidingName_CollidingName_CollidingName">
+        <swift:get />
+      </swift:property>
+      <swift:read-indexed
+        name="collidingName"
+        entity-type="element"
+        entity-name="collidingName"
+        wrapper-name="CollidingName_CollidingName_CollidingName" />
+
+      <swift:count
+        name="numberOfCollidingNameElements"
+        entity-name="collidingName" />
+
+      <swift:array-property
+        name="collidingNameArray"
+        entity-type="element"
+        entity-name="collidingName"
+        wrapper-name="CollidingName_CollidingName_CollidingName" />
+
+      <swift:delete-indexed
+        name="deleteCollidingName"
+        entity-name="collidingName" />
+
+    </swift:wrapper>
+
+    <swift:wrapper
+      name="CollidingName_CollidingName_CollidingName"
+      entity-type="element"
+      entity-name="collidingName"
+      parent-name="CollidingName_CollidingName">
+
+      <swift:property
+        name="value"
+        entity-type="attribute"
+        entity-name="value">
+        <swift:get />
+        <swift:set />
+      </swift:property>
+
+    </swift:wrapper>
+
+  </swift:source-file>
+</swift:source-dir>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<mb:Configuration xmlns:mb="http://itude.com/schemas/MB/2.0">
+  <mb:Model>
+    <mb:Documents>
+      <mb:Document name="level0" dataHandler="TreesHandler">
+        <mb:Element name="level1">
+          <mb:Element name="level2">
+            <mb:Element name="level3">
+              <mb:Element name="level4">
+                <mb:Attribute name="value" type="string" />
+              </mb:Element>
+            </mb:Element>
+          </mb:Element>
+        </mb:Element>
+      </mb:Document>
+    </mb:Documents>
+  </mb:Model>
+</mb:Configuration>

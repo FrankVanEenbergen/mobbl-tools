@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<swift:source-dir
+  xmlns:swift="http://itude.com/schemas/codegen/ir/swift"
+  path="/output"
+  origin="origin.xml"
+  stream-to-stdout="false">
+  <swift:source-file
+    name="Banana">
+    <swift:wrapper
+      name="Banana"
+      entity-type="document"
+      entity-name="Banana">
+
+      <swift:create
+        name="createPeel"
+        entity-type="element"
+        entity-name="peel"
+        wrapper-name="Banana_Peel" />
+      <swift:create-indexed
+        name="createPeel"
+        entity-type="element"
+        entity-name="peel"
+        wrapper-name="Banana_Peel" />
+
+      <swift:property
+        name="peel"
+        entity-type="element"
+        entity-name="peel"
+        wrapper-name="Banana_Peel">
+        <swift:get />
+      </swift:property>
+      <swift:read-indexed
+        name="peel"
+        entity-type="element"
+        entity-name="peel"
+        wrapper-name="Banana_Peel" />
+
+      <swift:count
+        name="numberOfPeelElements"
+        entity-name="peel" />
+
+      <swift:array-property
+        name="peelArray"
+        entity-type="element"
+        entity-name="peel"
+        wrapper-name="Banana_Peel" />
+
+      <swift:delete-indexed
+        name="deletePeel"
+        entity-name="peel" />
+
+    </swift:wrapper>
+    <swift:wrapper
+      name="Banana_Peel"
+      entity-type="element"
+      entity-name="peel"
+      parent-name="Banana">
+
+      <swift:property
+        name="color"
+        entity-type="attribute"
+        entity-name="color">
+        <swift:get />
+        <swift:set />
+      </swift:property>
+
+    </swift:wrapper>
+  </swift:source-file>
+</swift:source-dir>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java:source-dir
+  xmlns:java="http://itude.com/schemas/codegen/ir/java"
+  path="/output"
+  origin="origin.xml"
+  stream-to-stdout="false">
+  <java:source-file
+    name="Text"
+    package="com.example.CodeGenerator"
+    package-path="com/example/CodeGenerator">
+    <java:wrapper
+      name="Text"
+      entity-type="document"
+      entity-name="Text">
+
+      <java:create
+        name="createContent"
+        entity-type="text"
+        entity-name="content" />
+      <java:create-indexed
+        name="createContent"
+        entity-type="text"
+        entity-name="content" />
+
+      <java:read
+        name="getContent"
+        entity-type="text"
+        entity-name="content" />
+      <java:read-indexed
+        name="getContent"
+        entity-type="text"
+        entity-name="content" />
+      <java:read-list
+        name="getContentList"
+        entity-type="text"
+        entity-name="content" />
+
+      <java:count
+        name="getNumberOfContentElements"
+        entity-name="content" />
+
+      <java:update
+        name="setContent"
+        entity-type="text"
+        entity-name="content" />
+      <java:update-indexed
+        name="setContent"
+        entity-type="text"
+        entity-name="content" />
+
+      <java:delete-indexed
+        name="deleteContent"
+        entity-name="content" />
+
+    </java:wrapper>
+  </java:source-file>
+</java:source-dir>

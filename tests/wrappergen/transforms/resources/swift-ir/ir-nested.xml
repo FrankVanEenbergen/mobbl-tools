@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<swift:source-dir
+  xmlns:swift="http://itude.com/schemas/codegen/ir/swift"
+  path="/output"
+  origin="origin.xml"
+  stream-to-stdout="false">
+  <swift:source-file
+    name="Nested">
+    <swift:wrapper
+      name="Nested"
+      entity-type="document"
+      entity-name="Nested">
+
+      <swift:create
+        name="createOuter"
+        entity-type="element"
+        entity-name="outer"
+        wrapper-name="Nested_Outer" />
+      <swift:create-indexed
+        name="createOuter"
+        entity-type="element"
+        entity-name="outer"
+        wrapper-name="Nested_Outer" />
+
+      <swift:property
+        name="outer"
+        entity-type="element"
+        entity-name="outer"
+        wrapper-name="Nested_Outer">
+        <swift:get />
+      </swift:property>
+
+      <swift:read-indexed
+        name="outer"
+        entity-type="element"
+        entity-name="outer"
+        wrapper-name="Nested_Outer" />
+
+      <swift:count
+        name="numberOfOuterElements"
+        entity-name="outer" />
+
+      <swift:array-property
+        name="outerArray"
+        entity-type="element"
+        entity-name="outer"
+        wrapper-name="Nested_Outer" />
+
+      <swift:delete-indexed
+        name="deleteOuter"
+        entity-name="outer" />
+
+
+    </swift:wrapper>
+    <swift:wrapper
+      name="Nested_Outer"
+      entity-type="element"
+      entity-name="outer"
+      parent-name="Nested">
+
+      <swift:create
+        name="createInner"
+        entity-type="element"
+        entity-name="inner"
+        wrapper-name="Nested_Outer_Inner" />
+      <swift:create-indexed
+        name="createInner"
+        entity-type="element"
+        entity-name="inner"
+        wrapper-name="Nested_Outer_Inner" />
+
+      <swift:property
+        name="inner"
+        entity-type="element"
+        entity-name="inner"
+        wrapper-name="Nested_Outer_Inner">
+        <swift:get />
+      </swift:property>
+
+      <swift:read-indexed
+        name="inner"
+        entity-type="element"
+        entity-name="inner"
+        wrapper-name="Nested_Outer_Inner" />
+
+      <swift:count
+        name="numberOfInnerElements"
+        entity-name="inner" />
+
+      <swift:array-property
+        name="innerArray"
+        entity-type="element"
+        entity-name="inner"
+        wrapper-name="Nested_Outer_Inner" />
+
+      <swift:delete-indexed
+        name="deleteInner"
+        entity-name="inner" />
+
+    </swift:wrapper>
+    <swift:wrapper
+      name="Nested_Outer_Inner"
+      entity-type="element"
+      entity-name="inner"
+      parent-name="Nested_Outer">
+
+      <swift:property
+        name="value"
+        entity-type="attribute"
+        entity-name="value">
+        <swift:get />
+        <swift:set />
+      </swift:property>
+
+    </swift:wrapper>
+  </swift:source-file>
+</swift:source-dir>

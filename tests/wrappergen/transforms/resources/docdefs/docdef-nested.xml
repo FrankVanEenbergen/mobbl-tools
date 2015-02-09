@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mb:Configuration xmlns:mb="http://itude.com/schemas/MB/2.0">
+  <mb:Model>
+    <mb:Documents>
+      <mb:Document name="Nested" dataHandler="TreesHandler">
+        <mb:Element name="outer">
+          <mb:Element name="inner">
+            <mb:Attribute name="value" type="string" />
+          </mb:Element>
+        </mb:Element>
+      </mb:Document>
+    </mb:Documents>
+  </mb:Model>
+</mb:Configuration>
+

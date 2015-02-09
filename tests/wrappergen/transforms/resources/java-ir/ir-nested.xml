@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java:source-dir
+  xmlns:java="http://itude.com/schemas/codegen/ir/java"
+  path="/output"
+  origin="origin.xml"
+  stream-to-stdout="false">
+  <java:source-file
+    name="Nested"
+    package="com.example.CodeGenerator"
+    package-path="com/example/CodeGenerator">
+    <java:wrapper
+      name="Nested"
+      entity-type="document"
+      entity-name="Nested">
+
+      <java:create
+        name="createOuter"
+        entity-type="element"
+        entity-name="outer"
+        wrapper-name="Outer" />
+      <java:create-indexed
+        name="createOuter"
+        entity-type="element"
+        entity-name="outer"
+        wrapper-name="Outer" />
+
+      <java:read
+        name="getOuter"
+        entity-type="element"
+        entity-name="outer"
+        wrapper-name="Outer" />
+      <java:read-indexed
+        name="getOuter"
+        entity-type="element"
+        entity-name="outer"
+        wrapper-name="Outer" />
+      <java:read-list
+        name="getOuterList"
+        entity-type="element"
+        entity-name="outer"
+        wrapper-name="Outer" />
+
+      <java:count
+        name="getNumberOfOuterElements"
+        entity-name="outer" />
+
+      <java:delete-indexed
+        name="deleteOuter"
+        entity-name="outer" />
+
+
+      <java:wrapper
+        name="Outer"
+        entity-type="element"
+        entity-name="outer">
+
+        <java:create
+          name="createInner"
+          entity-type="element"
+          entity-name="inner"
+          wrapper-name="Inner" />
+        <java:create-indexed
+          name="createInner"
+          entity-type="element"
+          entity-name="inner"
+          wrapper-name="Inner" />
+
+        <java:read
+          name="getInner"
+          entity-type="element"
+          entity-name="inner"
+          wrapper-name="Inner" />
+        <java:read-indexed
+          name="getInner"
+          entity-type="element"
+          entity-name="inner"
+          wrapper-name="Inner" />
+        <java:read-list
+          name="getInnerList"
+          entity-type="element"
+          entity-name="inner"
+          wrapper-name="Inner" />
+
+        <java:count
+          name="getNumberOfInnerElements"
+          entity-name="inner" />
+
+        <java:delete-indexed
+          name="deleteInner"
+          entity-name="inner" />
+        
+        <java:wrapper
+          name="Inner"
+          entity-type="element"
+          entity-name="inner">
+          
+          <java:read
+            name="getValue"
+            entity-type="attribute"
+            entity-name="value" />
+
+          <java:update
+            name="setValue"
+            entity-type="attribute"
+            entity-name="value" />
+          
+        </java:wrapper>
+      </java:wrapper>
+    </java:wrapper>
+  </java:source-file>
+</java:source-dir>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<swift:source-dir
+  xmlns:swift="http://itude.com/schemas/codegen/ir/swift"
+  path="/output"
+  origin="origin.xml"
+  stream-to-stdout="false">
+  <swift:source-file
+    name="Text">
+    <swift:wrapper
+      name="Text"
+      entity-type="document"
+      entity-name="Text">
+
+      <swift:create
+        name="createContent"
+        entity-type="text"
+        entity-name="content" />
+      <swift:create-indexed
+        name="createContent"
+        entity-type="text"
+        entity-name="content" />
+
+      <swift:property
+        name="content"
+        entity-type="text"
+        entity-name="content">
+        <swift:get />
+        <swift:set />
+      </swift:property>
+
+      <swift:read-indexed
+        name="content"
+        entity-type="text"
+        entity-name="content" />
+
+      <swift:count
+        name="numberOfContentElements"
+        entity-name="content" />
+
+      <swift:array-property
+        name="contentArray"
+        entity-type="text"
+        entity-name="content" />
+
+      <swift:update-indexed
+        name="setContent"
+        entity-type="text"
+        entity-name="content" />
+
+      <swift:delete-indexed
+        name="deleteContent"
+        entity-name="content" />
+
+    </swift:wrapper>
+  </swift:source-file>
+</swift:source-dir>

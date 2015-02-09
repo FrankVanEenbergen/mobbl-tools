@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mb:Configuration xmlns:mb="http://itude.com/schemas/MB/2.0">
+  <mb:Model>
+    <mb:Documents>
+      <mb:Document name="Text" dataHandler="TextHandler" xmlns:mb="http://itude.com/schemas/MB/2.0">
+        <mb:Element name="content">
+          <mb:Attribute name="text()" type="string" />
+        </mb:Element>
+      </mb:Document>
+    </mb:Documents>
+  </mb:Model>
+</mb:Configuration>

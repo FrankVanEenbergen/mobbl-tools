@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java:source-dir
+  xmlns:java="http://itude.com/schemas/codegen/ir/java"
+  path="/output"
+  origin="origin.xml"
+  stream-to-stdout="false">
+  <java:source-file
+    name="Banana"
+    package="com.example.CodeGenerator"
+    package-path="com/example/CodeGenerator">
+    <java:wrapper
+      name="Banana"
+      entity-type="document"
+      entity-name="Banana">
+
+      <java:create
+        name="createPeel"
+        entity-type="element"
+        entity-name="peel"
+        wrapper-name="Peel" />
+      <java:create-indexed
+        name="createPeel"
+        entity-type="element"
+        entity-name="peel"
+        wrapper-name="Peel" />
+
+      <java:read
+        name="getPeel"
+        entity-type="element"
+        entity-name="peel"
+        wrapper-name="Peel" />
+      <java:read-indexed
+        name="getPeel"
+        entity-type="element"
+        entity-name="peel"
+        wrapper-name="Peel" />
+      <java:read-list
+        name="getPeelList"
+        entity-type="element"
+        entity-name="peel"
+        wrapper-name="Peel" />
+      <java:count
+        name="getNumberOfPeelElements"
+        entity-name="peel" />
+
+      <java:delete-indexed
+        name="deletePeel"
+        entity-name="peel" />
+
+      <java:wrapper
+        name="Peel"
+        entity-type="element"
+        entity-name="peel">
+
+        <java:read
+          name="getColor"
+          entity-type="attribute"
+          entity-name="color" />
+        <java:update
+          name="setColor"
+          entity-type="attribute"
+          entity-name="color" />
+
+      </java:wrapper>
+    </java:wrapper>
+  </java:source-file>
+</java:source-dir>

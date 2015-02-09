@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<x:description
+  xmlns:x="http://www.jenitennison.com/xslt/xspec"
+  xmlns:mb="http://itude.com/schemas/MB/2.0"
+  xmlns:mbxsl="http://itude.com/schemas/MBXSL/1.0"
+  xmlns:java="http://itude.com/schemas/codegen/ir/java"
+  stylesheet="../../../../share/wrappergen/xslt/java/docdef-ir.xslt">
+
+  <x:param name="outputDirectory" select="'/output'" />
+  <x:param name="package" select="'com.example.CodeGenerator'" />
+  <x:param name="origin" select="'origin.xml'" />
+  <x:param name="devMode" select="false()" />
+
+  <x:scenario label="Capitalize name">
+    <x:call function="mbxsl:capitalize">
+      <x:param select="'test'" />
+    </x:call>
+
+    <x:expect label="Should be 'Test' with a capital 'T'." select="'Test'" />
+  </x:scenario>
+
+  <x:scenario label="Decapitalize name">
+    <x:call function="mbxsl:decapitalize">
+      <x:param select="'Test'" />
+    </x:call>
+
+    <x:expect label="Should be 'test' without a lower case 't'." select="'test'" />
+  </x:scenario>
+
+  <x:scenario label="Convert package description 'a.b.c.d' to corresponding path">
+    <x:call function="mbxsl:package-to-path">
+      <x:param select="'a.b.c.d'" />
+    </x:call>
+
+    <x:expect label="should be 'a/b/c/d'" select="'a/b/c/d'" />
+  </x:scenario>
+
+  <x:scenario label="Text-only element">
+    <x:context href="../resources/docdefs/docdef-text.xml" />
+    <x:expect
+      label="Must be a single wrapper with one pair of String getters"
+      href="../resources/java-ir/ir-text.xml" select="*" />
+  </x:scenario>
+
+  <x:scenario label="Complex element with single attribute">
+    <x:context href="../resources/docdefs/docdef-complex.xml" />
+    <x:expect
+      label="Must be a Banana class with a pair of Peel getters and a Peel inner class with one pair of String getters"
+      href="../resources/java-ir/ir-complex.xml" select="*" />
+  </x:scenario>
+
+  <x:scenario label="Nested complex elements">
+    <x:context href="../resources/docdefs/docdef-nested.xml" />
+    <x:expect
+      label="Must be a Nested document wrapper containing an 'outer' element wrapper containing an 'inner' element wrapper containing a value attribute getter"
+      href="../resources/java-ir/ir-nested.xml" select="*" />
+  </x:scenario>
+
+  <x:scenario label="Name collisions">
+    <x:context href="../resources/docdefs/docdef-name-collisions.xml" />
+    <x:expect
+      label="Must postfix otherwise identical class names with an underscore and a number"
+      href="../resources/java-ir/ir-name-collisions.xml" select="*" />
+  </x:scenario>
+
+</x:description>
+
