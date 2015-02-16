@@ -22,8 +22,8 @@ limitations under the License.
 <mb:Configuration xmlns:mb="http://itude.com/schemas/MB/2.0">
   <mb:Model>
     <mb:Documents>
-      <mb:Document name="collidingName" dataHandler="TreesHandler">
-        <mb:Element name="CollidingName">
+      <mb:Document name="CollidingName" dataHandler="TreesHandler">
+        <mb:Element name="collidingName">
           <mb:Element name="collidingName">
             <mb:Attribute name="value" type="string" />
           </mb:Element>

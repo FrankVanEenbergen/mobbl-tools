@@ -24,82 +24,36 @@ limitations under the License.
   origin="origin.xml"
   stream-to-stdout="false">
   <swift:source-file
-    name="CollidingName">
+    name="MBCollidingName">
     <swift:wrapper
-      name="CollidingName"
+      name="MBCollidingName"
       entity-type="document"
-      entity-name="collidingName">
+      entity-name="CollidingName">
 
       <swift:create
         name="createCollidingName"
         entity-type="element"
-        entity-name="CollidingName"
-        wrapper-name="CollidingName_CollidingName" />
+        entity-name="collidingName"
+        wrapper-name="MBCollidingName_CollidingName" />
       <swift:create-indexed
         name="createCollidingName"
         entity-type="element"
-        entity-name="CollidingName"
-        wrapper-name="CollidingName_CollidingName" />
+        entity-name="collidingName"
+        wrapper-name="MBCollidingName_CollidingName" />
 
       <swift:property
         name="collidingName"
         entity-type="element"
-        entity-name="CollidingName"
-        wrapper-name="CollidingName_CollidingName">
+        entity-name="collidingName"
+        wrapper-name="MBCollidingName_CollidingName">
         <swift:get />
       </swift:property>
 
       <swift:read-indexed
         name="collidingName"
         entity-type="element"
-        entity-name="CollidingName"
-        wrapper-name="CollidingName_CollidingName" />
-
-      <swift:count
-        name="numberOfCollidingNameElements"
-        entity-name="CollidingName" />
-
-      <swift:array-property
-        name="collidingNameArray"
-        entity-type="element"
-        entity-name="CollidingName"
-        wrapper-name="CollidingName_CollidingName" />
-
-      <swift:delete-indexed
-        name="deleteCollidingName"
-        entity-name="CollidingName" />
-
-    </swift:wrapper>
-
-    <swift:wrapper
-      name="CollidingName_CollidingName"
-      entity-type="element"
-      entity-name="CollidingName"
-      parent-name="CollidingName">
-
-      <swift:create
-        name="createCollidingName"
-        entity-type="element"
         entity-name="collidingName"
-        wrapper-name="CollidingName_CollidingName_CollidingName" />
-      <swift:create-indexed
-        name="createCollidingName"
-        entity-type="element"
-        entity-name="collidingName"
-        wrapper-name="CollidingName_CollidingName_CollidingName" />
-
-      <swift:property
-        name="collidingName"
-        entity-type="element"
-        entity-name="collidingName"
-        wrapper-name="CollidingName_CollidingName_CollidingName">
-        <swift:get />
-      </swift:property>
-      <swift:read-indexed
-        name="collidingName"
-        entity-type="element"
-        entity-name="collidingName"
-        wrapper-name="CollidingName_CollidingName_CollidingName" />
+        wrapper-name="MBCollidingName_CollidingName" />
 
       <swift:count
         name="numberOfCollidingNameElements"
@@ -109,7 +63,7 @@ limitations under the License.
         name="collidingNameArray"
         entity-type="element"
         entity-name="collidingName"
-        wrapper-name="CollidingName_CollidingName_CollidingName" />
+        wrapper-name="MBCollidingName_CollidingName" />
 
       <swift:delete-indexed
         name="deleteCollidingName"
@@ -118,10 +72,56 @@ limitations under the License.
     </swift:wrapper>
 
     <swift:wrapper
-      name="CollidingName_CollidingName_CollidingName"
+      name="MBCollidingName_CollidingName"
       entity-type="element"
       entity-name="collidingName"
-      parent-name="CollidingName_CollidingName">
+      parent-name="MBCollidingName">
+
+      <swift:create
+        name="createCollidingName"
+        entity-type="element"
+        entity-name="collidingName"
+        wrapper-name="MBCollidingName_CollidingName_CollidingName" />
+      <swift:create-indexed
+        name="createCollidingName"
+        entity-type="element"
+        entity-name="collidingName"
+        wrapper-name="MBCollidingName_CollidingName_CollidingName" />
+
+      <swift:property
+        name="collidingName"
+        entity-type="element"
+        entity-name="collidingName"
+        wrapper-name="MBCollidingName_CollidingName_CollidingName">
+        <swift:get />
+      </swift:property>
+      <swift:read-indexed
+        name="collidingName"
+        entity-type="element"
+        entity-name="collidingName"
+        wrapper-name="MBCollidingName_CollidingName_CollidingName" />
+
+      <swift:count
+        name="numberOfCollidingNameElements"
+        entity-name="collidingName" />
+
+      <swift:array-property
+        name="collidingNameArray"
+        entity-type="element"
+        entity-name="collidingName"
+        wrapper-name="MBCollidingName_CollidingName_CollidingName" />
+
+      <swift:delete-indexed
+        name="deleteCollidingName"
+        entity-name="collidingName" />
+
+    </swift:wrapper>
+
+    <swift:wrapper
+      name="MBCollidingName_CollidingName_CollidingName"
+      entity-type="element"
+      entity-name="collidingName"
+      parent-name="MBCollidingName_CollidingName">
 
       <swift:property
         name="value"

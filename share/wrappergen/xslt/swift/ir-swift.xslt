@@ -115,7 +115,7 @@ class <xsl:value-of select="@name" /> : NSObject {
 
     var relativePath : String {
         get {
-            return element.name() + "[" + siblingIndex + "]"
+            return element.name() + "[\(siblingIndex)]"
         }
     }
 

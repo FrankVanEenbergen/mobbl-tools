@@ -28,6 +28,7 @@ limitations under the License.
   <x:param name="outputDirectory" select="'/output'" />
   <x:param name="origin" select="'origin.xml'" />
   <x:param name="devMode" select="false()" />
+  <x:param name="class-prefix" select="'MB'" />
 
   <x:scenario label="Capitalize name">
     <x:call function="mbxsl:capitalize">
@@ -37,14 +38,6 @@ limitations under the License.
     <x:expect label="Should be 'Test' with a capital 'T'." select="'Test'" />
   </x:scenario>
 
-  <x:scenario label="Decapitalize name">
-    <x:call function="mbxsl:decapitalize">
-      <x:param select="'Test'" />
-    </x:call>
-
-    <x:expect label="Should be 'test' without a lower case 't'." select="'test'" />
-  </x:scenario>
-
   <x:scenario label="Building prefixed-style wrapper class names with mbxsl:prefixed-class-name()">
     <x:call function="mbxsl:prefixed-class-name" />
 
@@ -52,35 +45,35 @@ limitations under the License.
       <x:call>
         <x:param select="//mb:Document[@name='level0']" href="../resources/docdefs/docdef-prefixing.xml" />
       </x:call>
-      <x:expect label="should be 'Level0'" select="'Level0'" />
+      <x:expect label="should be 'MBLevel0'" select="'MBLevel0'" />
     </x:scenario>
 
     <x:scenario label="The name of the wrapper class for the 'level1' mb:Element element in resources/docdefs/docdef-prefixing.xml">
       <x:call>
         <x:param select="//mb:Element[@name='level1']" href="../resources/docdefs/docdef-prefixing.xml" />
       </x:call>
-      <x:expect label="should be 'Level0_Level1'" select="'Level0_Level1'" />
+      <x:expect label="should be 'MBLevel0_Level1'" select="'MBLevel0_Level1'" />
     </x:scenario>
 
     <x:scenario label="The name of the wrapper class for the 'level2' mb:Element element in resources/docdefs/docdef-prefixing.xml">
       <x:call>
         <x:param select="//mb:Element[@name='level2']" href="../resources/docdefs/docdef-prefixing.xml" />
       </x:call>
-      <x:expect label="should be 'Level0_Level1_Level2'" select="'Level0_Level1_Level2'" />
+      <x:expect label="should be 'MBLevel0_Level1_Level2'" select="'MBLevel0_Level1_Level2'" />
     </x:scenario>
 
     <x:scenario label="The name of the wrapper class for the 'level3' mb:Element element in resources/docdefs/docdef-prefixing.xml">
       <x:call>
         <x:param select="//mb:Element[@name='level3']" href="../resources/docdefs/docdef-prefixing.xml" />
       </x:call>
-      <x:expect label="should be 'Level0_Level1_Level2_Level3'" select="'Level0_Level1_Level2_Level3'" />
+      <x:expect label="should be 'MBLevel0_Level1_Level2_Level3'" select="'MBLevel0_Level1_Level2_Level3'" />
     </x:scenario>
 
     <x:scenario label="The name of the wrapper class for the 'level4' mb:Element element in resources/docdefs/docdef-prefixing.xml">
       <x:call>
         <x:param select="//mb:Element[@name='level4']" href="../resources/docdefs/docdef-prefixing.xml" />
       </x:call>
-      <x:expect label="should be 'Level0_Level1_Level2_Level3_Level4'" select="'Level0_Level1_Level2_Level3_Level4'" />
+      <x:expect label="should be 'MBLevel0_Level1_Level2_Level3_Level4'" select="'MBLevel0_Level1_Level2_Level3_Level4'" />
     </x:scenario>
 
   </x:scenario>

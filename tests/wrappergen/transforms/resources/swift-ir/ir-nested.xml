@@ -24,9 +24,9 @@ limitations under the License.
   origin="origin.xml"
   stream-to-stdout="false">
   <swift:source-file
-    name="Nested">
+    name="MBNested">
     <swift:wrapper
-      name="Nested"
+      name="MBNested"
       entity-type="document"
       entity-name="Nested">
 
@@ -34,18 +34,18 @@ limitations under the License.
         name="createOuter"
         entity-type="element"
         entity-name="outer"
-        wrapper-name="Nested_Outer" />
+        wrapper-name="MBNested_Outer" />
       <swift:create-indexed
         name="createOuter"
         entity-type="element"
         entity-name="outer"
-        wrapper-name="Nested_Outer" />
+        wrapper-name="MBNested_Outer" />
 
       <swift:property
         name="outer"
         entity-type="element"
         entity-name="outer"
-        wrapper-name="Nested_Outer">
+        wrapper-name="MBNested_Outer">
         <swift:get />
       </swift:property>
 
@@ -53,7 +53,7 @@ limitations under the License.
         name="outer"
         entity-type="element"
         entity-name="outer"
-        wrapper-name="Nested_Outer" />
+        wrapper-name="MBNested_Outer" />
 
       <swift:count
         name="numberOfOuterElements"
@@ -63,7 +63,7 @@ limitations under the License.
         name="outerArray"
         entity-type="element"
         entity-name="outer"
-        wrapper-name="Nested_Outer" />
+        wrapper-name="MBNested_Outer" />
 
       <swift:delete-indexed
         name="deleteOuter"
@@ -72,27 +72,27 @@ limitations under the License.
 
     </swift:wrapper>
     <swift:wrapper
-      name="Nested_Outer"
+      name="MBNested_Outer"
       entity-type="element"
       entity-name="outer"
-      parent-name="Nested">
+      parent-name="MBNested">
 
       <swift:create
         name="createInner"
         entity-type="element"
         entity-name="inner"
-        wrapper-name="Nested_Outer_Inner" />
+        wrapper-name="MBNested_Outer_Inner" />
       <swift:create-indexed
         name="createInner"
         entity-type="element"
         entity-name="inner"
-        wrapper-name="Nested_Outer_Inner" />
+        wrapper-name="MBNested_Outer_Inner" />
 
       <swift:property
         name="inner"
         entity-type="element"
         entity-name="inner"
-        wrapper-name="Nested_Outer_Inner">
+        wrapper-name="MBNested_Outer_Inner">
         <swift:get />
       </swift:property>
 
@@ -100,7 +100,7 @@ limitations under the License.
         name="inner"
         entity-type="element"
         entity-name="inner"
-        wrapper-name="Nested_Outer_Inner" />
+        wrapper-name="MBNested_Outer_Inner" />
 
       <swift:count
         name="numberOfInnerElements"
@@ -110,7 +110,7 @@ limitations under the License.
         name="innerArray"
         entity-type="element"
         entity-name="inner"
-        wrapper-name="Nested_Outer_Inner" />
+        wrapper-name="MBNested_Outer_Inner" />
 
       <swift:delete-indexed
         name="deleteInner"
@@ -118,10 +118,10 @@ limitations under the License.
 
     </swift:wrapper>
     <swift:wrapper
-      name="Nested_Outer_Inner"
+      name="MBNested_Outer_Inner"
       entity-type="element"
       entity-name="inner"
-      parent-name="Nested_Outer">
+      parent-name="MBNested_Outer">
 
       <swift:property
         name="value"

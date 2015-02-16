@@ -24,9 +24,9 @@ limitations under the License.
   origin="origin.xml"
   stream-to-stdout="false">
   <swift:source-file
-    name="Banana">
+    name="MBBanana">
     <swift:wrapper
-      name="Banana"
+      name="MBBanana"
       entity-type="document"
       entity-name="Banana">
 
@@ -34,25 +34,25 @@ limitations under the License.
         name="createPeel"
         entity-type="element"
         entity-name="peel"
-        wrapper-name="Banana_Peel" />
+        wrapper-name="MBBanana_Peel" />
       <swift:create-indexed
         name="createPeel"
         entity-type="element"
         entity-name="peel"
-        wrapper-name="Banana_Peel" />
+        wrapper-name="MBBanana_Peel" />
 
       <swift:property
         name="peel"
         entity-type="element"
         entity-name="peel"
-        wrapper-name="Banana_Peel">
+        wrapper-name="MBBanana_Peel">
         <swift:get />
       </swift:property>
       <swift:read-indexed
         name="peel"
         entity-type="element"
         entity-name="peel"
-        wrapper-name="Banana_Peel" />
+        wrapper-name="MBBanana_Peel" />
 
       <swift:count
         name="numberOfPeelElements"
@@ -62,7 +62,7 @@ limitations under the License.
         name="peelArray"
         entity-type="element"
         entity-name="peel"
-        wrapper-name="Banana_Peel" />
+        wrapper-name="MBBanana_Peel" />
 
       <swift:delete-indexed
         name="deletePeel"
@@ -70,10 +70,10 @@ limitations under the License.
 
     </swift:wrapper>
     <swift:wrapper
-      name="Banana_Peel"
+      name="MBBanana_Peel"
       entity-type="element"
       entity-name="peel"
-      parent-name="Banana">
+      parent-name="MBBanana">
 
       <swift:property
         name="color"

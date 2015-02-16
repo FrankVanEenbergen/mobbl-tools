@@ -24,9 +24,9 @@ limitations under the License.
   origin="origin.xml"
   stream-to-stdout="false">
   <swift:source-file
-    name="Text">
+    name="MBText">
     <swift:wrapper
-      name="Text"
+      name="MBText"
       entity-type="document"
       entity-name="Text">
 

@@ -30,13 +30,10 @@ limitations under the License.
   <xsl:param name="devMode" as="xs:boolean" />
   <xsl:param name="outputDirectory" />
   <xsl:param name="origin" />
+  <xsl:param name="class-prefix" />
 
   <xsl:strip-space elements="*"/>
 
-  <xsl:function name="mbxsl:decapitalize">
-    <xsl:param name="input" />
-    <xsl:sequence select="concat(lower-case(substring($input, 1, 1)), substring($input, 2))" />
-  </xsl:function>
   <xsl:function name="mbxsl:capitalize">
     <xsl:param name="input" />
     <xsl:sequence select="concat(upper-case(substring($input, 1, 1)), substring($input, 2))" />
@@ -52,15 +49,10 @@ limitations under the License.
     <xsl:sequence select="mbxsl:capitalize(mbxsl:to-valid-identifier($raw-name))" />
   </xsl:function>
 
-  <xsl:function name="mbxsl:to-decapitalized-identifier">
-    <xsl:param name="raw-name" />
-    <xsl:sequence select="mbxsl:decapitalize(mbxsl:to-valid-identifier($raw-name))" />
-  </xsl:function>
-
   <xsl:function name="mbxsl:prefixed-class-name" as="xs:string">
     <xsl:param name="element" />
 
-    <xsl:value-of select="string-join($element/(ancestor-or-self::mb:Document|ancestor-or-self::mb:Element)/mbxsl:to-capitalized-identifier(@name), '_')" />
+    <xsl:value-of select="concat($class-prefix, string-join($element/(ancestor-or-self::mb:Document|ancestor-or-self::mb:Element)/mbxsl:to-capitalized-identifier(@name), '_'))" />
   </xsl:function>
 
   <xsl:template match="/endpoints:EndPoints">
@@ -74,7 +66,7 @@ limitations under the License.
   </xsl:template>
 
   <xsl:template match="mb:Model/mb:Documents/mb:Document">
-    <xsl:variable name="class-name" select="mbxsl:to-capitalized-identifier(@name)" />
+    <xsl:variable name="class-name" select="mbxsl:prefixed-class-name(@name)" />
 
     <swift:source-file
       name="{$class-name}">
@@ -97,7 +89,6 @@ limitations under the License.
        nothing else -->
   <xsl:template match="mb:Element[mb:Attribute[@name='text()'] and count(*)=1]">
     <xsl:variable name="capitalized-name" select="mbxsl:to-capitalized-identifier(@name)" />
-    <xsl:variable name="decapitalized-name" select="mbxsl:to-decapitalized-identifier(@name)" />
 
     <swift:create
       name="create{$capitalized-name}"
@@ -109,7 +100,7 @@ limitations under the License.
       entity-name="{@name}" />
 
     <swift:property
-      name="{$decapitalized-name}"
+      name="{@name}"
       entity-type="text"
       entity-name="{@name}">
       <swift:get />
@@ -117,7 +108,7 @@ limitations under the License.
     </swift:property>
 
     <swift:read-indexed
-      name="{$decapitalized-name}"
+      name="{@name}"
       entity-type="text"
       entity-name="{@name}" />
 
@@ -126,7 +117,7 @@ limitations under the License.
       entity-name="{@name}" />
 
     <swift:array-property
-      name="{$decapitalized-name}Array"
+      name="{@name}Array"
       entity-type="text"
       entity-name="{@name}" />
 
@@ -145,7 +136,6 @@ limitations under the License.
        "text()" or that have child elements -->
   <xsl:template match="mb:Element[mb:Attribute[@name='text()'] and count(*)>1] | mb:Element[not(mb:Attribute[@name='text()'])]">
     <xsl:variable name="capitalized-name" select="mbxsl:to-capitalized-identifier(@name)" />
-    <xsl:variable name="decapitalized-name" select="mbxsl:to-decapitalized-identifier(@name)" />
 
     <xsl:variable name="class-name" select="mbxsl:prefixed-class-name(.)" />
 
@@ -161,7 +151,7 @@ limitations under the License.
       wrapper-name="{$class-name}" />
 
     <swift:property
-      name="{$decapitalized-name}"
+      name="{@name}"
       entity-type="element"
       entity-name="{@name}"
       wrapper-name="{$class-name}">
@@ -169,7 +159,7 @@ limitations under the License.
     </swift:property>
 
     <swift:read-indexed
-      name="{$decapitalized-name}"
+      name="{@name}"
       entity-type="element"
       entity-name="{@name}"
       wrapper-name="{$class-name}" />
@@ -179,7 +169,7 @@ limitations under the License.
       entity-name="{@name}" />
 
     <swift:array-property
-      name="{$decapitalized-name}Array"
+      name="{@name}Array"
       entity-type="element"
       entity-name="{@name}"
       wrapper-name="{$class-name}" />
@@ -222,7 +212,7 @@ limitations under the License.
     <xsl:param name="attribute-name" />
 
     <swift:property
-      name="{mbxsl:to-decapitalized-identifier($attribute-name)}"
+      name="{$attribute-name}"
       entity-type="attribute"
       entity-name="{$attribute-name}">
       <swift:get />

@@ -35,6 +35,7 @@ GenerateCommand.run = function(args) {
     .option('-o, --output <output>', 'Path to output directory')
     .option('-L, --language <java|swift>', 'Target language')
     .option('-p, --package <package>', 'Java package')
+    .option('-c, --class-prefix <prefix>', 'Class prefix')
     .option('-d, --debug', 'Debug mode: streams everyting to stdout')
     .action(self.generateDocumentWrappers.bind(self, program));
 
@@ -100,6 +101,10 @@ GenerateCommand.generateDocumentWrappers = function(program, options) {
     language: options.language,
     devMode: !!options.debug
   };
+
+  if (options.language === 'swift' && options.classPrefix) {
+    parameters.classPrefix = options.classPrefix;
+  }
 
   if (options.language === 'java') {
     parameters['package'] = options['package'];

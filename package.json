@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "Tools to aid in MOBBL development",
   "main": "index.js",
-  "bin": ["bin/mobbl","bin/mobbl-dummy","bin/mobbl-create"],
+  "bin": ["bin/mobbl", "bin/mobbl-generate", "bin/mobbl-dummy", "bin/mobbl-create"],
   "scripts": {
     "test": "npm run test-wrappergen",
     "test-wrappergen": "npm run test-wrappergen-transforms && npm run test-wrappergen-js",
@@ -12,7 +12,7 @@
     "test-wrappergen-transforms-java": "$XSPEC_HOME/bin/xspec.sh tests/wrappergen/transforms/java/docdef-ir.xspec",
     "test-wrappergen-transforms-swift": "$XSPEC_HOME/bin/xspec.sh tests/wrappergen/transforms/swift/docdef-ir.xspec",
     "test-wrappergen-java": "bin/mobbl generate wrappers --debug -c tests/wrappergen/transforms/resources/docdefs -L java -o /output -p java.test",
-    "test-wrappergen-swift": "bin/mobbl generate wrappers --debug -c tests/wrappergen/transforms/resources/docdefs -L swift -o /output"
+    "test-wrappergen-swift": "bin/mobbl generate wrappers --debug -c tests/wrappergen/transforms/resources/docdefs -L swift -o /output --class-prefix TST"
   },
   "repository": {
     "type": "git",
