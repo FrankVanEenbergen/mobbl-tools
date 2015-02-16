@@ -170,10 +170,18 @@ class <xsl:value-of select="@name" /> : NSObject {
   </xsl:template>
 
 
-  <!-- TEXT/ATTRIBUTE PROPERTY -->
-  <xsl:template match="swift:property[@entity-type='text' or @entity-type='attribute']">
+  <!-- TEXT PROPERTY -->
+  <xsl:template match="swift:property[@entity-type='text']">
   // Generated read/write property for text element "<xsl:value-of select="@entity-name" />"
   var <xsl:value-of select="@name" />: String {
+    <xsl:apply-templates />
+  }
+  </xsl:template>
+
+  <!-- ATTRIBUTE PROPERTY -->
+  <xsl:template match="swift:property[@entity-type='attribute']">
+  // Generated read/write property for text element "<xsl:value-of select="@entity-name" />"
+  var <xsl:value-of select="@name" />: String? {
     <xsl:apply-templates />
   }
   </xsl:template>
