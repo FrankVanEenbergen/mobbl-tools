@@ -54,7 +54,9 @@ limitations under the License.
         name="getContentList"
         entity-type="text"
         entity-name="content" />
-
+      <java:check
+        name="hasContent"
+        entity-name="content" />
       <java:count
         name="getNumberOfContentElements"
         entity-name="content" />

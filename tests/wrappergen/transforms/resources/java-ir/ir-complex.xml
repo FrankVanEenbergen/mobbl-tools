@@ -59,6 +59,9 @@ limitations under the License.
         entity-type="element"
         entity-name="peel"
         wrapper-name="Peel" />
+      <java:check
+        name="hasPeel"
+        entity-name="peel" />
       <java:count
         name="getNumberOfPeelElements"
         entity-name="peel" />

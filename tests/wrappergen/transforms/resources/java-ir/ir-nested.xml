@@ -59,7 +59,9 @@ limitations under the License.
         entity-type="element"
         entity-name="outer"
         wrapper-name="Outer" />
-
+      <java:check
+        name="hasOuter"
+        entity-name="outer" />
       <java:count
         name="getNumberOfOuterElements"
         entity-name="outer" />
@@ -100,7 +102,9 @@ limitations under the License.
           entity-type="element"
           entity-name="inner"
           wrapper-name="Inner" />
-
+        <java:check
+          name="hasInner"
+          entity-name="inner" />
         <java:count
           name="getNumberOfInnerElements"
           entity-name="inner" />

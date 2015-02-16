@@ -280,5 +280,13 @@ public static class <xsl:value-of select="@name" /> {
   }
   </xsl:template>
 
+  <!-- CHECK FOR ELEMENTS -->
+  <xsl:template match="java:check">
+  // Generated check method for (text) element "<xsl:value-of select="@entity-name" />"
+  public boolean <xsl:value-of select="@name" />() {
+    return this.getElementContainer().getElementsWithName("<xsl:value-of select="@entity-name" />").size() > 0;
+  }
+  </xsl:template>
+
 </xsl:stylesheet>
 

@@ -112,6 +112,10 @@ limitations under the License.
       entity-type="text"
       entity-name="{@name}" />
 
+    <swift:check
+      name="has{$capitalized-name}"
+      entity-name="{@name}" />
+
     <swift:count
       name="numberOf{$capitalized-name}Elements"
       entity-name="{@name}" />
@@ -163,6 +167,10 @@ limitations under the License.
       entity-type="element"
       entity-name="{@name}"
       wrapper-name="{$class-name}" />
+
+    <swift:check
+      name="has{$capitalized-name}"
+      entity-name="{@name}" />
 
     <swift:count
       name="numberOf{$capitalized-name}Elements"

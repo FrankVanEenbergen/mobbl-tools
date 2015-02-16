@@ -118,6 +118,10 @@ limitations under the License.
       entity-type="text"
       entity-name="{@name}" />
 
+    <java:check
+      name="has{$capitalized-name}"
+      entity-name="{@name}" />
+
     <java:count
       name="getNumberOf{$capitalized-name}Elements"
       entity-name="{@name}" />
@@ -182,6 +186,10 @@ limitations under the License.
       entity-type="element"
       entity-name="{@name}"
       wrapper-name="{$postfixed-class-name}" />
+
+    <java:check
+      name="has{$capitalized-name}"
+      entity-name="{@name}" />
 
     <java:count
       name="getNumberOf{$capitalized-name}Elements"

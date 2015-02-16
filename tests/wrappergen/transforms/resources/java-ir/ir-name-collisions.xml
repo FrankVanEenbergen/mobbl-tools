@@ -31,47 +31,49 @@ limitations under the License.
     <java:wrapper
       name="CollidingName"
       entity-type="document"
-      entity-name="collidingName">
+      entity-name="CollidingName">
 
       <java:create
         name="createCollidingName"
         entity-type="element"
-        entity-name="CollidingName"
+        entity-name="collidingName"
         wrapper-name="CollidingName_1" />
       <java:create-indexed
         name="createCollidingName"
         entity-type="element"
-        entity-name="CollidingName"
+        entity-name="collidingName"
         wrapper-name="CollidingName_1" />
 
       <java:read
         name="getCollidingName"
         entity-type="element"
-        entity-name="CollidingName"
+        entity-name="collidingName"
         wrapper-name="CollidingName_1" />
       <java:read-indexed
         name="getCollidingName"
         entity-type="element"
-        entity-name="CollidingName"
+        entity-name="collidingName"
         wrapper-name="CollidingName_1" />
       <java:read-list
         name="getCollidingNameList"
         entity-type="element"
-        entity-name="CollidingName"
+        entity-name="collidingName"
         wrapper-name="CollidingName_1" />
-
+      <java:check
+        name="hasCollidingName"
+        entity-name="collidingName" />
       <java:count
         name="getNumberOfCollidingNameElements"
-        entity-name="CollidingName" />
+        entity-name="collidingName" />
 
       <java:delete-indexed
         name="deleteCollidingName"
-        entity-name="CollidingName" />
+        entity-name="collidingName" />
 
       <java:wrapper
         name="CollidingName_1"
         entity-type="element"
-        entity-name="CollidingName">
+        entity-name="collidingName">
 
         <java:create
           name="createCollidingName"
@@ -99,7 +101,9 @@ limitations under the License.
           entity-type="element"
           entity-name="collidingName"
           wrapper-name="CollidingName_2" />
-
+        <java:check
+          name="hasCollidingName"
+          entity-name="collidingName" />
         <java:count
           name="getNumberOfCollidingNameElements"
           entity-name="collidingName" />

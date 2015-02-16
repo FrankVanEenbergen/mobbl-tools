@@ -51,7 +51,9 @@ limitations under the License.
         name="content"
         entity-type="text"
         entity-name="content" />
-
+      <swift:check
+        name="hasContent"
+        entity-name="content" />
       <swift:count
         name="numberOfContentElements"
         entity-name="content" />

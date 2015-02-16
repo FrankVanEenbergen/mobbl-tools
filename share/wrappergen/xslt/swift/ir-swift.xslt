@@ -290,5 +290,15 @@ class <xsl:value-of select="@name" /> : NSObject {
     }
   </xsl:template>
 
+  <!-- CHECK FOR ELEMENTS -->
+  <xsl:template match="swift:check">
+  // Generated check method for (text) element "<xsl:value-of select="@entity-name" />"
+  var <xsl:value-of select="@name" />: Bool {
+      get {
+          return self.elementContainer.elementsWithName("<xsl:value-of select="@entity-name" />").count > 0;
+      }
+  }
+  </xsl:template>
+
 </xsl:stylesheet>
 

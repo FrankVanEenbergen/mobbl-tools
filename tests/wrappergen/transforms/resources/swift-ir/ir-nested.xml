@@ -54,7 +54,9 @@ limitations under the License.
         entity-type="element"
         entity-name="outer"
         wrapper-name="MBNested_Outer" />
-
+      <swift:check
+        name="hasOuter"
+        entity-name="outer" />
       <swift:count
         name="numberOfOuterElements"
         entity-name="outer" />
@@ -101,7 +103,9 @@ limitations under the License.
         entity-type="element"
         entity-name="inner"
         wrapper-name="MBNested_Outer_Inner" />
-
+      <swift:check
+        name="hasInner"
+        entity-name="inner" />
       <swift:count
         name="numberOfInnerElements"
         entity-name="inner" />

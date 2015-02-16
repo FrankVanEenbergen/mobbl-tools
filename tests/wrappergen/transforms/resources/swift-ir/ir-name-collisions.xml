@@ -54,7 +54,9 @@ limitations under the License.
         entity-type="element"
         entity-name="collidingName"
         wrapper-name="MBCollidingName_CollidingName" />
-
+      <swift:check
+        name="hasCollidingName"
+        entity-name="collidingName" />
       <swift:count
         name="numberOfCollidingNameElements"
         entity-name="collidingName" />
@@ -100,7 +102,9 @@ limitations under the License.
         entity-type="element"
         entity-name="collidingName"
         wrapper-name="MBCollidingName_CollidingName_CollidingName" />
-
+      <swift:check
+        name="hasCollidingName"
+        entity-name="collidingName" />
       <swift:count
         name="numberOfCollidingNameElements"
         entity-name="collidingName" />
