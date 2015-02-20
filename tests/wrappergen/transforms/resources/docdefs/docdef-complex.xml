@@ -25,6 +25,7 @@ limitations under the License.
         <mb:Document name="Banana" dataHandler="BananaHandler">
           <mb:Element name="peel">
             <mb:Attribute name="color" type="string" />
+            <mb:Attribute name="text()" type="string" />
           </mb:Element>
         </mb:Document>
     </mb:Documents>

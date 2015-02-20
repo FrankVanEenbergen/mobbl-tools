@@ -84,6 +84,15 @@ limitations under the License.
           entity-type="attribute"
           entity-name="color" />
 
+        <java:read
+          name="getText"
+          entity-type="attribute"
+          entity-name="text()" />
+        <java:update
+          name="setText"
+          entity-type="attribute"
+          entity-name="text()" />
+
       </java:wrapper>
     </java:wrapper>
   </java:source-file>

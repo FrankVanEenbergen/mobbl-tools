@@ -206,21 +206,24 @@ limitations under the License.
 
   <xsl:template match="mb:Attribute[@name='text()']">
     <xsl:call-template name="Attribute">
-      <xsl:with-param name="attribute-name" select="'text'" />
+      <xsl:with-param name="name" select="'text'" />
+      <xsl:with-param name="attribute-name" select="'text()'" />
     </xsl:call-template>
   </xsl:template>
 
   <xsl:template match="mb:Attribute[not(@name='text()')]">
     <xsl:call-template name="Attribute">
+      <xsl:with-param name="name" select="@name" />
       <xsl:with-param name="attribute-name" select="@name" />
     </xsl:call-template>
   </xsl:template>
 
   <xsl:template name="Attribute">
+    <xsl:param name="name" />
     <xsl:param name="attribute-name" />
 
     <swift:property
-      name="{$attribute-name}"
+      name="{$name}"
       entity-type="attribute"
       entity-name="{$attribute-name}">
       <swift:get />

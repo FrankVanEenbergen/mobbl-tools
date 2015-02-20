@@ -85,6 +85,14 @@ limitations under the License.
         <swift:set />
       </swift:property>
 
+      <swift:property
+        name="text"
+        entity-type="attribute"
+        entity-name="text()">
+        <swift:get />
+        <swift:set />
+      </swift:property>
+
     </swift:wrapper>
   </swift:source-file>
 </swift:source-dir>
