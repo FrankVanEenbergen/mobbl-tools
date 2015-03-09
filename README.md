@@ -53,3 +53,14 @@ The `mobbl generate docdef`-command generates a document definition for use in y
 * `-f, --from <file>` reads the corresponding file and tries to create a sensible definition that can be used to parse said file. Currently, only JSON-files are supported.
 * `-d, --datahandler <name>`  uses the specified datahandler. Default: MBMemoryDataHandler
 * `-n, --noautocreate` sets the autocreate-attribute to false
+
+## Generate wrapper classes for documents
+The `mobbl generate wrappers`-command generates wrapper classes for your documents based on your existing document definitions.
+
+Options:  
+
+* `-c, --config <config>`: Determines the path to the mobbl config directory
+* `-o, --output <output>`: Determines where the generated classes are placed
+* `-L, --language <java|swift>`: Target language (only java or swift)
+* `-p, --package <package>`: When targeting Java, you also need to set a package
+

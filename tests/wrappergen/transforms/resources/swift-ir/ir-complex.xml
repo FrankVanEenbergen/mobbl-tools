@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+
+Test example: ir-complex
+
+(C) Copyright Itude Mobile B.V., The Netherlands
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+  http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+
+-->
+<swift:source-dir
+  xmlns:swift="http://itude.com/schemas/codegen/ir/swift"
+  path="/output"
+  origin="origin.xml"
+  stream-to-stdout="false">
+  <swift:source-file
+    name="MBBanana">
+    <swift:wrapper
+      name="MBBanana"
+      entity-type="document"
+      entity-name="Banana">
+
+      <swift:create
+        name="createPeel"
+        entity-type="element"
+        entity-name="peel"
+        wrapper-name="MBBanana_Peel" />
+      <swift:create-indexed
+        name="createPeel"
+        entity-type="element"
+        entity-name="peel"
+        wrapper-name="MBBanana_Peel" />
+
+      <swift:property
+        name="peel"
+        entity-type="element"
+        entity-name="peel"
+        wrapper-name="MBBanana_Peel">
+        <swift:get />
+      </swift:property>
+      <swift:read-indexed
+        name="peel"
+        entity-type="element"
+        entity-name="peel"
+        wrapper-name="MBBanana_Peel" />
+      <swift:check
+        name="hasPeel"
+        entity-name="peel" />
+      <swift:count
+        name="numberOfPeelElements"
+        entity-name="peel" />
+
+      <swift:array-property
+        name="peelArray"
+        entity-type="element"
+        entity-name="peel"
+        wrapper-name="MBBanana_Peel" />
+
+      <swift:delete-indexed
+        name="deletePeel"
+        entity-name="peel" />
+
+    </swift:wrapper>
+    <swift:wrapper
+      name="MBBanana_Peel"
+      entity-type="element"
+      entity-name="peel"
+      parent-name="MBBanana">
+
+      <swift:property
+        name="color"
+        entity-type="attribute"
+        entity-name="color">
+        <swift:get />
+        <swift:set />
+      </swift:property>
+
+      <swift:property
+        name="text"
+        entity-type="attribute"
+        entity-name="text()">
+        <swift:get />
+        <swift:set />
+      </swift:property>
+
+    </swift:wrapper>
+  </swift:source-file>
+</swift:source-dir>

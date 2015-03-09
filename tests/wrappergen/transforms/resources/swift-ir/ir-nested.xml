@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+
+Test example: ir-nested
+
+(C) Copyright Itude Mobile B.V., The Netherlands
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+  http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+
+-->
+<swift:source-dir
+  xmlns:swift="http://itude.com/schemas/codegen/ir/swift"
+  path="/output"
+  origin="origin.xml"
+  stream-to-stdout="false">
+  <swift:source-file
+    name="MBNested">
+    <swift:wrapper
+      name="MBNested"
+      entity-type="document"
+      entity-name="Nested">
+
+      <swift:create
+        name="createOuter"
+        entity-type="element"
+        entity-name="outer"
+        wrapper-name="MBNested_Outer" />
+      <swift:create-indexed
+        name="createOuter"
+        entity-type="element"
+        entity-name="outer"
+        wrapper-name="MBNested_Outer" />
+
+      <swift:property
+        name="outer"
+        entity-type="element"
+        entity-name="outer"
+        wrapper-name="MBNested_Outer">
+        <swift:get />
+      </swift:property>
+
+      <swift:read-indexed
+        name="outer"
+        entity-type="element"
+        entity-name="outer"
+        wrapper-name="MBNested_Outer" />
+      <swift:check
+        name="hasOuter"
+        entity-name="outer" />
+      <swift:count
+        name="numberOfOuterElements"
+        entity-name="outer" />
+
+      <swift:array-property
+        name="outerArray"
+        entity-type="element"
+        entity-name="outer"
+        wrapper-name="MBNested_Outer" />
+
+      <swift:delete-indexed
+        name="deleteOuter"
+        entity-name="outer" />
+
+
+    </swift:wrapper>
+    <swift:wrapper
+      name="MBNested_Outer"
+      entity-type="element"
+      entity-name="outer"
+      parent-name="MBNested">
+
+      <swift:create
+        name="createInner"
+        entity-type="element"
+        entity-name="inner"
+        wrapper-name="MBNested_Outer_Inner" />
+      <swift:create-indexed
+        name="createInner"
+        entity-type="element"
+        entity-name="inner"
+        wrapper-name="MBNested_Outer_Inner" />
+
+      <swift:property
+        name="inner"
+        entity-type="element"
+        entity-name="inner"
+        wrapper-name="MBNested_Outer_Inner">
+        <swift:get />
+      </swift:property>
+
+      <swift:read-indexed
+        name="inner"
+        entity-type="element"
+        entity-name="inner"
+        wrapper-name="MBNested_Outer_Inner" />
+      <swift:check
+        name="hasInner"
+        entity-name="inner" />
+      <swift:count
+        name="numberOfInnerElements"
+        entity-name="inner" />
+
+      <swift:array-property
+        name="innerArray"
+        entity-type="element"
+        entity-name="inner"
+        wrapper-name="MBNested_Outer_Inner" />
+
+      <swift:delete-indexed
+        name="deleteInner"
+        entity-name="inner" />
+
+    </swift:wrapper>
+    <swift:wrapper
+      name="MBNested_Outer_Inner"
+      entity-type="element"
+      entity-name="inner"
+      parent-name="MBNested_Outer">
+
+      <swift:property
+        name="value"
+        entity-type="attribute"
+        entity-name="value">
+        <swift:get />
+        <swift:set />
+      </swift:property>
+
+    </swift:wrapper>
+  </swift:source-file>
+</swift:source-dir>

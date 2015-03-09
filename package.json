@@ -3,9 +3,16 @@
   "version": "0.0.1",
   "description": "Tools to aid in MOBBL development",
   "main": "index.js",
-  "bin": ["bin/mobbl","bin/mobbl-dummy","bin/mobbl-create"],
+  "bin": ["bin/mobbl", "bin/mobbl-generate", "bin/mobbl-dummy", "bin/mobbl-create"],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npm run test-wrappergen",
+    "test-wrappergen": "npm run test-wrappergen-transforms && npm run test-wrappergen-js",
+    "test-wrappergen-js": "vows --spec tests/wrappergen/js/*",
+    "test-wrappergen-transforms": "npm run test-wrappergen-transforms-java && npm run test-wrappergen-transforms-swift",
+    "test-wrappergen-transforms-java": "$XSPEC_HOME/bin/xspec.sh tests/wrappergen/transforms/java/docdef-ir.xspec",
+    "test-wrappergen-transforms-swift": "$XSPEC_HOME/bin/xspec.sh tests/wrappergen/transforms/swift/docdef-ir.xspec",
+    "test-wrappergen-java": "bin/mobbl generate wrappers --debug -c tests/wrappergen/transforms/resources/docdefs -L java -o /output -p java.test",
+    "test-wrappergen-swift": "bin/mobbl generate wrappers --debug -c tests/wrappergen/transforms/resources/docdefs -L swift -o /output --class-prefix TST"
   },
   "repository": {
     "type": "git",
@@ -24,7 +31,14 @@
     "istextorbinary": "1.0.0",
     "prompt": "0.2.13",
     "replacestream": "0.1.3",
-    "xml2js": "0.4.4"
+    "xml2js": "0.4.4",
+    "q": "^1.1.2",
+    "xslt4node": "^0.1.1"
+  },
+  "devDependencies": {
+    "vows": "^0.7.0",
+    "mocks": "0.0.15",
+    "sinon": "^1.11.1"
   },
   "homepage": "http://www.mobbl.org"
 }
