@@ -37,12 +37,14 @@ CreateCommand.generateProject = function () {
   prompt.start();
 
   userchoice.getUserChoice(function(result) {
-    actuallyGenerateProject(result);
+    CreateCommand.actuallyGenerateProject(result);
   });
 }
 
 CreateCommand.actuallyGenerateProject = function (parameters) {
   var path = require('path');
+  var ProjectGenerator = require('../lib/projgen/projectgenerator');
+
 
   var templatePathPerPlatform = {
     ios     : path.join(__dirname, '../share/projgen/ios-app-template/'),
