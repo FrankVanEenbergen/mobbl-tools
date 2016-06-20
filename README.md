@@ -63,4 +63,5 @@ Options:
 * `-o, --output <output>`: Determines where the generated classes are placed
 * `-L, --language <java|swift>`: Target language (only java or swift)
 * `-p, --package <package>`: When targeting Java, you also need to set a package
+* `-c, --class-prefix <prefix>`: 'Determines the prefix that is added before the generated classes
 
